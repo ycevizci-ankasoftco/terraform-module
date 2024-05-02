@@ -11,6 +11,7 @@ variable "client_id" {}
 variable "client_secret" {}
 variable "tenant_id" {}
 variable "subscription_id" {}
+variable "location" {}
 
 # Kimlik bilgilerini .tfvars dosyasından yükleme
 terraform {
@@ -27,7 +28,7 @@ terraform {
 # Resource group oluştur
 resource "azurerm_resource_group" "example" {
   name     = "test-resources"
-  location = "West Europe"
+  location = var.location
 }
 
 # Virtual network tanımla
